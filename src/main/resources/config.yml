@@ -1,0 +1,91 @@
+# (!) ALL FEATURES AND MESSAGES SUPPORT HEX COLOURS. (!)
+# (!) HEX FORMAT &#(6 digit code) e.g. &#ffffff (!)
+
+# To set a groups default color add them the permission.
+# elitechat.defaults.(color) <- only works with default minecraft colours.
+
+#PlaceHolders
+
+# %player%
+# %color%
+# %color-name%
+# %targets%
+# %status%
+
+# Need Help Discord Tag: ムAmowny#0001
+
+Plugin:
+  # Put infront of all messages.
+  Prefix: '&8[&9Color&8]'
+  Database:
+    MySQL:
+      Address: 'localhost'
+      Port: '3306'
+      Username: 'root'
+      Password: ''
+      Database: 'elitechat_colors' # Database Name
+  Permissions:
+    Color:
+      Set: 'elitechat.colors.set' # Access All color
+      Hex: 'elitechat.colors.hex' # Access Hex Color
+      CertainColor: 'elitechat.color.%color-name%' # Access Certain Colors.
+    Reset:
+      Force: 'elitechat.reset.force'
+    Special:
+      Bold: 'elitechat.bold'
+      Italic: 'elitechat.italic'
+      UnderLine: 'elitechat.underline'
+      Magic: 'elitechat.magic'
+      Strikethrough: 'elitechat.strikethrough'
+    Admin:
+      Reload: 'elitechat.reload'
+      AllPerms: 'elitechat.*'
+  DefaultColor: '&f'
+
+
+# GUI Settings
+GUI:
+  Settings:
+    OpeningMessage: '&aOpening the chatcolor gui'
+    Items:
+      Filler: 'PAPER'
+      Colors:
+        # Options: Wool, Concrete, Dye, Texture. Changes the blocks that the colors are showed as.
+        Type: 'Texture'
+
+# Plugin  Messages
+Messages:
+  Color:
+    Success: '&7You have chosen %color%this &7as your chatcolor.'
+  Reset:
+    Success: '&7You have reset your chatcolor.'
+    ForceReset:
+      Staff: '&7You reset chatcolor for &e%target%'
+      Player: '&7Your color was reset by &e%player%'
+  Bold:
+    Success: '&7You have set &eBOLD &7%status%.'
+  Italic:
+    Success: '&7You have set &eITALIC &7%status%.'
+  Magic:
+    Success: '&7You have set &eMAGIC &7%status%.'
+  Underline:
+    Success: '&7You have set &eUNDERLINE &7%status%.'
+  Strikethrough:
+    Success: '&7You have set &eStrikethrough &7%status%.'
+  HelpMenu:
+    - '&8-----< &9EliteChat &8>-----'
+    - ''
+    - '&3Commands -'
+    - '&3/color set (color) &8- &7Sets your color manually.'
+    - '&3/color set hex (color) &8- &7Sets your hex color manually.'
+    - '&3/color reset &8- &7Resets your color to default.'
+    - '&3/color gui &8- &7Opens the main gui menu.'
+    - '&3/color set bold/italic/magic/underline/strikethrough &8- &7Sets special effects.'
+    - '&3Available colors - darkblue, darkgreen, cyan, red, gold, purple, gray'
+    - 'darkgray, blue, black, lime, darkred, pink, yellow, white, aqua'
+    - '&3/color help &8- &7Opens this menu.'
+    - ''
+  Errors:
+    NoPermissions: '&cError: You do not have permission to that.'
+    InvalidArgument: '&cError: Invalid Argument. Try /color help.'
+    NullPlayer: '&cError: That player does not exist or is not online.'

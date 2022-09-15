@@ -1,0 +1,12 @@
+name: EliteChat
+version: '${project.version}'
+main: me.emre.elitechat.EliteChat
+api-version: 1.19
+authors: [ Emre ]
+commands:
+  chatcolor:
+    aliases: [cc, color, elitechat, renk]
+    description: Open ChatColor GUI
+  achatcolor:
+    aliases: [acc, acolor, admincolor, adminrenk, arenk]
+    description: Open Admin ChatColor GUI
